@@ -9,8 +9,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         PieChartView pieChartView = (PieChartView) findViewById(R.id.pie_chart);
 
         List<PieChartView.PieceDataHolder> pieceDataHolders = new ArrayList<>();
-
         pieceDataHolders.add(new PieChartView.PieceDataHolder(1,Color.RED, "天才，１"));
         pieceDataHolders.add(new PieChartView.PieceDataHolder(5, Color.GREEN, "凡才，２"));
         pieceDataHolders.add(new PieChartView.PieceDataHolder(3, Color.BLUE, "あほ，３"));
