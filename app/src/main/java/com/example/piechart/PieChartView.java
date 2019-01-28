@@ -14,42 +14,27 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 饼状统计图，带有标注线，都可以自行设定其多种参数选项
- * <p/>
- * Created By: Seal.Wu
- */
+
 public class PieChartView extends View {
 
     private TextPaint mTextPaint;
     private float mTextWidth;
     private float mTextHeight;
 
-    /**
-     * 饼图半径
-     */
+    //円グラフの半径
     private float pieChartCircleRadius = 100;
 
     private float textBottom;
-    /**
-     * 记录文字大小
-     */
     private float mTextSize = 14;
 
-    /**
-     * 饼图所占矩形区域（不包括文字）
-     */
+
+     //円グラフが占める長方形の領域（テキストを除く）
     private RectF pieChartCircleRectF = new RectF();
 
-    /**
-     * 饼状图信息列表
-     */
+
     private List<PieceDataHolder> pieceDataHolders = new ArrayList<>();
 
 
-    /**
-     * 标记线长度
-     */
     private float markerLineLength = 30f;
 
     public PieChartView(Context context) {
@@ -99,11 +84,7 @@ public class PieChartView extends View {
         textBottom = fontMetrics.bottom;
     }
 
-    /**
-     * 设置饼状图的半径
-     *
-     * @param pieChartCircleRadius 饼状图的半径（px）
-     */
+
     public void setPieChartCircleRadius(int pieChartCircleRadius) {
 
         this.pieChartCircleRadius = pieChartCircleRadius;
@@ -111,11 +92,7 @@ public class PieChartView extends View {
         invalidate();
     }
 
-    /**
-     * 设置标记线的长度
-     *
-     * @param markerLineLength 标记线的长度（px）
-     */
+
     public void setMarkerLineLength(int markerLineLength) {
         this.markerLineLength = markerLineLength;
     }
@@ -154,31 +131,18 @@ public class PieChartView extends View {
         pieChartCircleRectF.bottom = pieChartCircleRectF.top + pieChartCircleRadius * 2;
     }
 
-    /**
-     * Gets the example dimension attribute value.
-     *
-     * @return The example dimension attribute value.(sp)
-     */
+
     public float getTextSize() {
         return mTextSize;
     }
 
-    /**
-     * Sets the view's text dimension attribute value. In the PieChartView view, this dimension
-     * is the font size.
-     *
-     * @param textSize The text dimension attribute value to use.(sp)
-     */
+
     public void setTextSize(float textSize) {
         mTextSize = textSize;
         invalidateTextPaintAndMeasurements();
     }
 
-    /**
-     * 设置饼状图要显示的数据
-     *
-     * @param data 列表数据
-     */
+
     public void setData(List<PieceDataHolder> data) {
 
         if (data != null) {
@@ -189,14 +153,7 @@ public class PieChartView extends View {
         invalidate();
     }
 
-    /**
-     * 绘制扇形
-     *
-     * @param canvas     画布
-     * @param color      要绘制扇形的颜色
-     * @param startAngle 起始角度
-     * @param sweepAngle 结束角度
-     */
+
     protected void drawSector(Canvas canvas, int color, float startAngle, float sweepAngle) {
 
         Paint paint = new Paint();
@@ -208,13 +165,7 @@ public class PieChartView extends View {
 
     }
 
-    /**
-     * 绘制标注线和标记文字
-     *
-     * @param canvas      画布
-     * @param color       标记的颜色
-     * @param rotateAngel 标记线和水平相差旋转的角度
-     */
+
     protected void drawMarkerLineAndText(Canvas canvas, int color, float rotateAngel, String text) {
         Paint paint = new Paint();
         paint.setFlags(Paint.ANTI_ALIAS_FLAG);
@@ -247,24 +198,16 @@ public class PieChartView extends View {
 
     }
 
-    /**
-     * 饼状图每块的信息持有者
-     */
+
     public static final class PieceDataHolder {
 
-        /**
-         * 每块扇形的值的大小
-         */
+
         private float value;
 
-        /**
-         * 扇形的颜色
-         */
+
         private int color;
 
-        /**
-         * 每块的标记
-         */
+
         private String marker;
 
 

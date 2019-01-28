@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         List<PieChartView.PieceDataHolder> pieceDataHolders = new ArrayList<>();
 
-        pieceDataHolders.add(new PieChartView.PieceDataHolder(2,0xFF77CCAA, "今天，１"));
-        pieceDataHolders.add(new PieChartView.PieceDataHolder(5, 0xFF11AA33, "明天，２"));
-        pieceDataHolders.add(new PieChartView.PieceDataHolder(3, Color.GRAY, "就是风，３"));
-      /*  pieceDataHolders.add(new PieChartView.PieceDataHolder(5000, Color.YELLOW, "呵呵，４"));
-        pieceDataHolders.add(new PieChartView.PieceDataHolder(10000, Color.RED, "小京，５"));
-        pieceDataHolders.add(new PieChartView.PieceDataHolder(13000, Color.BLUE, "花花，６"));*/
+        pieceDataHolders.add(new PieChartView.PieceDataHolder(1,Color.RED, "天才，１"));
+        pieceDataHolders.add(new PieChartView.PieceDataHolder(5, Color.GREEN, "凡才，２"));
+        pieceDataHolders.add(new PieChartView.PieceDataHolder(3, Color.BLUE, "あほ，３"));
+        pieceDataHolders.add(new PieChartView.PieceDataHolder(5, Color.YELLOW, "無能，４"));
+        /*pieceDataHolders.add(new PieChartView.PieceDataHolder(0, 0xFF11AA33, "小京，５"));
+        pieceDataHolders.add(new PieChartView.PieceDataHolder(0, Color.BLUE, "花花，６"));*/
+
 
         pieChartView.setData(pieceDataHolders);
 
